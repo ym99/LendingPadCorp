@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "26c5397e-2163-4643-ae23-13c5eb581e25",
+		"_postman_id": "f1c2fa41-2529-4464-89a9-e6d2e4dd1e1e",
 		"name": "LendingPad-SampleProject",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30292534"
+		"_exporter_id": "41662641"
 	},
 	"item": [
 		{
@@ -139,7 +139,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:49834/users/1422740e-6426-4c46-8445-3f5274a62424/create",
+							"raw": "http://localhost:49834/users/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -147,7 +147,6 @@
 							"port": "49834",
 							"path": [
 								"users",
-								"1422740e-6426-4c46-8445-3f5274a62424",
 								"create"
 							]
 						}
@@ -250,7 +249,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:49834/users/list/tag?tag=C",
+							"raw": "http://localhost:49834/users/list?tag=C",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -258,8 +257,7 @@
 							"port": "49834",
 							"path": [
 								"users",
-								"list",
-								"tag"
+								"list"
 							],
 							"query": [
 								{
@@ -278,11 +276,423 @@
 			"item": [
 				{
 					"name": "Products",
-					"item": []
+					"item": [
+						{
+							"name": "Get All Products",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:49834/products/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"products",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Products with filter by name",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/products/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"products",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Products with filter by description",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/products/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"products",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Products with filter by price",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/products/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"products",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Products with filter by rating",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/products/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"products",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product - A",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:49834/products/7c866ada-5c51-47c8-812e-d8c2cd5f7f17",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"products",
+										"7c866ada-5c51-47c8-812e-d8c2cd5f7f17"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Product - C",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"French Press Coffee Maker, Coffee Press of 18/8 Stainless Steel Filter 11.8 OZ\",\r\n    \"description\": \"The filter of this french press coffee maker is made of 304 stainless steel. The thickened and dense double-layer filter effectively filters coffee grounds and tea leaves. This small coffee press allows you to enjoy smooth and rich coffee. The body of this french press coffee maker is made of cold-resistant and heat-resistant borosilicate glass. The coffee press can withstand instantaneous temperature differences of -20 to 120 ℃ without bursting. Therefore, you can use this camping french press with complete confidence.\",\r\n    \"price\": 6.99,\r\n    \"rating\": 3,\r\n    \"imageUrl\": \"https://a.media-amazon.com/images/I/61OKsPT1PFL._AC_SL1500_.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:49834/products/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"products",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Product - B",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"MODIFIEED - French Press Coffee Maker, Coffee Press of 18/8 Stainless Steel Filter 11.8 OZ\",\r\n    \"description\": \"MODIFIEED - The filter of this french press coffee maker is made of 304 stainless steel. The thickened and dense double-layer filter effectively filters coffee grounds and tea leaves. This small coffee press allows you to enjoy smooth and rich coffee. The body of this french press coffee maker is made of cold-resistant and heat-resistant borosilicate glass. The coffee press can withstand instantaneous temperature differences of -20 to 120 ℃ without bursting. Therefore, you can use this camping french press with complete confidence.\",\r\n    \"price\": 106.99,\r\n    \"rating\": 1,\r\n    \"imageUrl\": \"https://a.media-amazon.com/images/I/61OKsPT1PFL._AC_SL1500_.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:49834/products/56f214bf-b4dd-47eb-ad0e-f2b59a575deb/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"products",
+										"56f214bf-b4dd-47eb-ad0e-f2b59a575deb",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Product - B",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/products/56f214bf-b4dd-47eb-ad0e-f2b59a575deb/delete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"products",
+										"56f214bf-b4dd-47eb-ad0e-f2b59a575deb",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				},
 				{
 					"name": "Orders",
-					"item": []
+					"item": [
+						{
+							"name": "Get All Orders",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/orders/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"orders",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Order - A",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/orders/59e095f9-03e4-413f-b11f-b164479a3574",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"orders",
+										"59e095f9-03e4-413f-b11f-b164479a3574"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Order - B",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"9422740e-6426-4c46-8445-3f5274a62424\",\r\n    \"productId\": \"56f214bf-b4dd-47eb-ad0e-f2b59a575deb\",\r\n    \"quantity\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:49834/orders/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"orders",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Order A - Update Product 1 Set Quatity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"quantity\": 7 }\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:49834/orders/59e095f9-03e4-413f-b11f-b164479a3574/products/7c866ada-5c51-47c8-812e-d8c2cd5f7f17/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"orders",
+										"59e095f9-03e4-413f-b11f-b164479a3574",
+										"products",
+										"7c866ada-5c51-47c8-812e-d8c2cd5f7f17",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Order A - Add New Product (2)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n    \"quantity\": 11\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:49834/orders/59e095f9-03e4-413f-b11f-b164479a3574/products/7c866ada-5c51-47c8-812e-d8c2cd5f7f17/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"orders",
+										"59e095f9-03e4-413f-b11f-b164479a3574",
+										"products",
+										"7c866ada-5c51-47c8-812e-d8c2cd5f7f17",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Order A - Remove Product 1",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:49834/orders/59e095f9-03e4-413f-b11f-b164479a3574/products/7c866ada-5c51-47c8-812e-d8c2cd5f7f17/delete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"orders",
+										"59e095f9-03e4-413f-b11f-b164479a3574",
+										"products",
+										"7c866ada-5c51-47c8-812e-d8c2cd5f7f17",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Order - A",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/orders/59e095f9-03e4-413f-b11f-b164479a3574/delete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"orders",
+										"59e095f9-03e4-413f-b11f-b164479a3574",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}
