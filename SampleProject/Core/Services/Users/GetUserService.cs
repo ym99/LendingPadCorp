@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using BusinessEntities;
 using Common;
 using Data.Repositories;
@@ -21,9 +22,9 @@ namespace Core.Services.Users
             return _userRepository.Get(id);
         }
 
-        public IEnumerable<User> GetUsers(UserTypes? userType = null, string name = null, string email = null)
+        public IEnumerable<User> GetUsers(UserTypes? userType = null, string name = null, string email = null, string tag = null)
         {
-            return _userRepository.Get(userType, name, email);
+            return _userRepository.Get(userType, name, email, tag);
         }
     }
 }

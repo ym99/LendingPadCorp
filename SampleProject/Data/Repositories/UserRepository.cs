@@ -17,7 +17,7 @@ namespace Data.Repositories
             _documentSession = documentSession;
         }
 
-        public IEnumerable<User> Get(UserTypes? userType = null, string name = null, string email = null)
+        public IEnumerable<User> Get(UserTypes? userType = null, string name = null, string email = null, string tag = null)
         {
             var query = _documentSession.Advanced.DocumentQuery<User, UsersListIndex>();
 
@@ -49,7 +49,21 @@ namespace Data.Repositories
                 }
                 query = query.WhereEquals("Email", email);
             }
-            return query.ToList();
+
+            var users = query.ToList();
+
+            if (tag == null)
+            {
+                return users;
+            }
+
+            // I cannot use RavenDB to filter by tag due to the database configuration
+            // Assuming that I should not change the database configuration for this task
+            // I decided to filter in the memory collection
+
+            return users
+                .Where(user => user.Tags.Contains(tag))
+                .ToList();
         }
 
         public void DeleteAll()
